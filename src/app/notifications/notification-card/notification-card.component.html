@@ -1,3 +1,9 @@
+<h3>Words</h3>
 <ul>
-    <li *ngFor="let word of notification.words">{{word.text}}</li>
+    <li *ngFor="let word of notification.words"
+        [ngClass]="wordClass(word)" [class.has-data]="!!word.config" (click)="handle(word)">
+        Text: {{word.text}}, type: {{word.ui.componentType}}</li>
 </ul>
+
+<h3>Handler result</h3>
+<pre>{{result | json}}</pre>
